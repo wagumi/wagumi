@@ -1,0 +1,50 @@
+{
+  "name": "@wagumi/cats",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Cats NFT Collection for Wagumi DAO",
+  "homepage": "https://cats.wagumi.xyz",
+  "bugs": {
+    "url": "https://github.com/wagumi/wagumi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wagumi/wagumi.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "author": "Wagumi DAO",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "export": "next export",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "@tailwindcss/typography": "^0.5.0",
+    "@wagumi/contracts": "*",
+    "@walletconnect/web3-provider": "^1.7.1",
+    "autoprefixer": "^10.4.2",
+    "clsx": "^1.1.1",
+    "copy-to-clipboard": "^3.3.1",
+    "ethereal-react": "^0.4.0",
+    "next": "^12.0.8",
+    "next-seo": "^4.29.0",
+    "next-transpile-modules": "^9.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-error-boundary": "^3.1.4",
+    "react-icons": "^4.3.1",
+    "tailwindcss": "^3.0.15",
+    "wagmi": "^0.2.0",
+    "web3modal": "^1.9.5"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/tailwindcss": "^3.0.3",
+    "typescript": "^4.4.4"
+  }
+}

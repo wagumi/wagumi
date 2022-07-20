@@ -1,0 +1,5 @@
+upgrade: true
+reject:
+  - discord.js
+  - eslint-plugin-prettier
+  - typescript

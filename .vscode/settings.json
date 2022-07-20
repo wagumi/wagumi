@@ -1,0 +1,12 @@
+{
+  "solidity.enabledAsYouTypeCompilationErrorCheck": true,
+  "solidity.linter": "solhint",
+  "solidity.packageDefaultDependenciesContractsDirectory": "",
+  "solidity.packageDefaultDependenciesDirectory": "node_modules",
+  "solidity.solhintRules": {
+    "avoid-sha3": "warn"
+  },
+  "terminal.integrated.env.osx": {
+    "ZSH_INIT_COMMAND": "mux start wagumi"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "outDir": "./dist",
+    "paths": {
+      "*": ["./packages/contracts/node_modules/*"],
+      "@/abi/*": ["./packages/contracts/abi/*"],
+      "@/airdrop/*": ["./packages/airdrop/src/*"],
+      "@/airdrop/public/*": ["./packages/airdrop/public/*"],
+      "@/artifacts/*": ["./packages/contracts/artifacts/*"],
+      "@/cats/*": ["./packages/cats/src/*"],
+      "@/cats/public/*": ["./packages/cats/public/*"],
+      "@/deployments/*": ["./packages/contracts/deployments/*"],
+      "@/home/*": ["./packages/home/src/*"],
+      "@/home/public/*": ["./packages/home/public/*"],
+      "@/typechain/*": ["./packages/contracts/typechain/*"]
+    },
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2017"
+  },
+  "exclude": ["dist", "node_modules"],
+  "include": ["**/*"]
+}

@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDirs": [
+      "./abi",
+      "./deploy",
+      "./deployments",
+      "./scripts",
+      "./src",
+      "./tasks",
+      "./tests",
+      "./typechain"
+    ],
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2017",
+    "types": []
+  },
+  "exclude": ["**/node_modules"],
+  "extends": "../../tsconfig.base.json",
+  "files": ["./hardhat.config.ts"],
+  "include": [
+    "./abi/**/*.json",
+    "./deploy",
+    "./deployments/**/*.json",
+    "./scripts",
+    "./src",
+    "./tasks",
+    "./tests",
+    "./typechain",
+    "./hardhat.config.ts"
+  ]
+}

@@ -1,0 +1,1 @@
+export { useRandomNumber } from "./useRandomNumber";

@@ -1,0 +1,56 @@
+name: Pages
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/yarn
+      - run: |
+          rm -rf packages/cats/public
+          mkdir -p packages/cats/public
+          cp -r generated/metadata packages/cats/public
+          cp -r generated/favicon.svg packages/cats/public
+      - if: github.event_name == 'push'
+        run: |
+          yarn run turbo run build
+          yarn run turbo run export
+        env:
+          NEXT_PUBLIC_VERCEL_ENV: "production"
+      - if: github.event_name == 'pull_request'
+        run: |
+          yarn run turbo run build
+          yarn run turbo run export
+        env:
+          NEXT_PUBLIC_VERCEL_ENV: "preview"
+      - if: github.event_name == 'push'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          cname: cats.wagumi.xyz
+          external_repository: wagumi/cats.wagumi.xyz
+          personal_token: ${{ secrets.BOT_TOKEN }}
+          publish_dir: packages/cats/out
+          publish_branch: main
+      - if: github.event_name == 'pull_request'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          cname: rinkeby.cats.wagumi.xyz
+          external_repository: wagumi/rinkeby.cats.wagumi.xyz
+          personal_token: ${{ secrets.BOT_TOKEN }}
+          publish_dir: packages/cats/out
+          publish_branch: main
+        env:
+          NEXT_PUBLIC_VERCEL_ENV: "preview"
+      - if: github.event_name == 'push'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          cname: wagumi.xyz
+          external_repository: wagumi/wagumi.xyz
+          personal_token: ${{ secrets.BOT_TOKEN }}
+          publish_dir: packages/home/out
+          publish_branch: main

@@ -1,0 +1,22 @@
+name: Sync
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [sync-cmd]
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: ["rinkeby"]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.BOT_TOKEN }}
+          ref: ${{ matrix.branch }}
+      - run: |
+          git fetch --quiet && git merge --ff-only origin/main && git push || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}

@@ -1,0 +1,30 @@
+diff --git a/node_modules/nft-art-generator/bin/index.js b/node_modules/nft-art-generator/bin/index.js
+index 323107e..4c4c057 100755
+--- a/node_modules/nft-art-generator/bin/index.js
++++ b/node_modules/nft-art-generator/bin/index.js
+@@ -8,6 +8,7 @@ const chalk = require('chalk');
+ const boxen = require('boxen');
+ const ora = require('ora');
+ const inquirer = require('inquirer');
++const homedir = require('os').homedir();
+ const fs = require('fs');
+ const { readFile, writeFile, readdir } = require("fs").promises;
+ const mergeImages = require('merge-images');
+@@ -118,7 +119,7 @@ async function main() {
+ //GET THE BASEPATH FOR THE IMAGES
+ async function getBasePath() {
+   if (config.basePath !== undefined) {
+-    basePath = config.basePath;
++    basePath = homedir + config.basePath;
+     return;
+   }
+   const { base_path } = await inquirer.prompt([
+@@ -152,7 +153,7 @@ async function getBasePath() {
+ //GET THE OUTPUTPATH FOR THE IMAGES
+ async function getOutputPath() {
+   if (config.outputPath !== undefined) {
+-    outputPath = config.outputPath
++    outputPath = homedir + config.outputPath
+     return;
+   }
+   const { output_path } = await inquirer.prompt([
