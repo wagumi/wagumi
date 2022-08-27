@@ -18,8 +18,8 @@ contract GnosisScript is Script {
     address(0xf48f2B2d2a534e402487b3ee7C18c33Aec0Fe5e4);
 
   address[] internal owners = new address[](5);
-  GnosisSafeProxy proxy;
-  GnosisSafe safe;
+  GnosisSafeProxy internal proxy;
+  GnosisSafe internal safe;
   GnosisSafeL2 public safeL2;
 
   function run() external {
