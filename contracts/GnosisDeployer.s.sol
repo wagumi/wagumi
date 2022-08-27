@@ -48,7 +48,7 @@ contract GnosisScript is Script {
           0,
           0
         ),
-        123
+        420
       );
       safe = GnosisSafe(payable(address(proxy)));
     } else {
@@ -65,7 +65,7 @@ contract GnosisScript is Script {
           0,
           0
         ),
-        123323
+        420
       );
       safeL2 = GnosisSafeL2(payable(address(proxy)));
     }
