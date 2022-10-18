@@ -1,16 +1,11 @@
 {
   "solidity.enabledAsYouTypeCompilationErrorCheck": true,
   "solidity.linter": "solhint",
-  "solidity.packageDefaultDependenciesContractsDirectory": "src",
-  "solidity.packageDefaultDependenciesDirectory": "lib",
+  "solidity.packageDefaultDependenciesContractsDirectory": "",
+  "solidity.packageDefaultDependenciesDirectory": "node_modules",
   "solidity.solhintRules": {
     "avoid-sha3": "warn"
   },
-    "solidity.remappings": [
-    "forge-std/=lib/forge-std/src/",
-    "safe-contracts/=lib/safe-contracts/contracts/",
-    "@openzeppelin/=lib/openzeppelin-contracts/",
-  ],
   "terminal.integrated.env.osx": {
     "ZSH_INIT_COMMAND": "mux start wagumi"
   }
